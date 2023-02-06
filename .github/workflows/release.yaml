@@ -16,8 +16,7 @@ env:
   VERSION: 0.1.2
 
   # Space separated paths to include in the archive.
-  RELEASE_ADDS: README.md LICENSE-APACHE LICENSE-MIT
-
+  RELEASE_ADDS: README.md LICENSE-APACHE LICENSE-MIT clipboarddb.json .github/artifacts/install.sh
 jobs:
   build:
     name: Build artifacts

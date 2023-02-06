@@ -41,12 +41,15 @@ Will create two menus, 'Kubernetes' and 'Keys' each with one given command.
 
 ### Installation
 
+To Run the shell script to install globally, so you can run it with  ```clip``` (This will move executable and clipboarddb.json and add to PATH)
+```bash
+bash global-install.sh
+```
+
+or: 
+
 **Cargo build --release**
 
 Make sure that the clipboard.json file is in the same directory as the executable 
 (--release will create this in target/release/clip)
 
-Run the shell script to install globally, so you can run it with  ```clip```
-```bash
-bash global-install.sh
-```
