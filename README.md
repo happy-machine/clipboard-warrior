@@ -6,7 +6,7 @@ Clipboard warrior is a simple Terminal tool to make it easy for you to copy and 
 
 Clipboard warrior uses a flat file to store your commands so you can easily copy them between machines.
 </br>
-#### Commands
+### Commands
 
 **Arrow keys** - move between columns and rows
 **P** - Paste the contents of your clipboard into a new row in the selected menu
@@ -16,7 +16,8 @@ Clipboard warrior uses a flat file to store your commands so you can easily copy
 **H** - Home (command list)
 
 </br>
-#### Add a menu item
+
+### Add a menu item
 
 Edit the clipboarddb.json file and add a command with a new menu name, once you have saved the file and reload clipboard-warrior the new menu will now exist.
 
@@ -37,7 +38,8 @@ For example:
 Will create two menus, 'Kubernetes' and 'Keys' each with one given command.
 
 </br>
-#### Installation
+
+### Installation
 
 **Cargo build --release**
 
