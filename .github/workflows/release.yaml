@@ -24,12 +24,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - target: x86_64-unknown-linux-musl
-            os: ubuntu-latest
-            rust: stable
-          - target: aarch64-unknown-linux-musl
-            os: ubuntu-latest
-            rust: stable
+          # - target: x86_64-unknown-linux-musl
+          #   os: ubuntu-latest
+          #   rust: stable
+          # - target: aarch64-unknown-linux-musl
+          #   os: ubuntu-latest
+          #   rust: stable
           - target: x86_64-apple-darwin
             os: macos-latest
             rust: stable
@@ -122,15 +122,15 @@ jobs:
           tag_name: ${{ steps.get_version.outputs.VERSION }}
           release_name: ${{ steps.get_version.outputs.VERSION }}
 
-      - name: Download Linux amd64 tarball
-        uses: actions/download-artifact@v2
-        with:
-          name: ${{ env.LINUX_AMD64_TARGET }}
+      # - name: Download Linux amd64 tarball
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: ${{ env.LINUX_AMD64_TARGET }}
 
-      - name: Download Linux arm64 tarball
-        uses: actions/download-artifact@v2
-        with:
-          name: ${{ env.LINUX_ARM64_TARGET }}
+      # - name: Download Linux arm64 tarball
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: ${{ env.LINUX_ARM64_TARGET }}
 
       - name: Download Windows tarball
         uses: actions/download-artifact@v2
@@ -142,25 +142,25 @@ jobs:
         with:
           name: ${{ env.MACOS_TARGET }}
 
-      - name: Release Linux amd64 tarball
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
-          asset_content_type: application/gzip
-          asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
+      # - name: Release Linux amd64 tarball
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
+      #     asset_content_type: application/gzip
+      #     asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
 
-      - name: Release Linux arm64 tarball
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
-          asset_content_type: application/gzip
-          asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
+      # - name: Release Linux arm64 tarball
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
+      #     asset_content_type: application/gzip
+      #     asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
 
       - name: Release Windows tarball
         uses: actions/upload-release-asset@v1
