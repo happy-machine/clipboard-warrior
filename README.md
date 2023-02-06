@@ -9,11 +9,17 @@ Clipboard warrior uses a flat file to store your commands so you can easily copy
 ### Commands
 
 **Arrow keys** - move between columns and rows
+
 **P** - Paste the contents of your clipboard into a new row in the selected menu
+
 **C** - Copy the selected command to your clipboard
+
 **D** - Delete a command
+
 **Q** - Quit
+
 **H** - Home (command list)
+
 
 </br>
 
