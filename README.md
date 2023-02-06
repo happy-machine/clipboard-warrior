@@ -6,19 +6,16 @@ Clipboard warrior is a simple Terminal tool to make it easy for you to copy and 
 
 Clipboard warrior uses a flat file to store your commands so you can easily copy them between machines.
 </br>
+
+![Logo](./screenshot.png)
 ### Commands
 
-**Arrow keys** - move between columns and rows
-
-**P** - Paste the contents of your clipboard into a new row in the selected menu
-
-**C** - Copy the selected command to your clipboard
-
-**D** - Delete a command
-
-**Q** - Quit
-
-**H** - Home (command list)
+**Arrow keys** - move between columns and rows 
+**P** - Paste the contents of your clipboard into a new row in the selected menu   
+**C** - Copy the selected command to your clipboard   
+**D** - Delete a command   
+**Q** - Quit   
+**H** - Home (command list)   
 
 
 </br>
@@ -52,7 +49,7 @@ To Run the shell script to install globally, so you can run it with  ```clip``` 
 bash global-install.sh
 ```
 
-or: 
+or...
 
 **Cargo build --release**
 
