@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  RELEASE_BIN: clipboard-warrior
+  RELEASE_BIN: clip
   RELEASE_DIR: artifacts
   GITHUB_REF: '${{ github.ref }}'
   WINDOWS_TARGET: x86_64-pc-windows-msvc
