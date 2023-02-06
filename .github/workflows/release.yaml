@@ -13,6 +13,7 @@ env:
   MACOS_TARGET: x86_64-apple-darwin
   LINUX_AMD64_TARGET: x86_64-unknown-linux-musl
   LINUX_ARM64_TARGET: aarch64-unknown-linux-musl
+  VERSION: 0.1.1
 
   # Space separated paths to include in the archive.
   RELEASE_ADDS: README.md LICENSE-APACHE LICENSE-MIT
@@ -119,8 +120,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
-          release_name: ${{ steps.get_version.outputs.VERSION }}
+          # tag_name: ${{ steps.get_version.outputs.VERSION }}
+          # release_name: ${{ steps.get_version.outputs.VERSION }}
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
 
       # - name: Download Linux amd64 tarball
       #   uses: actions/download-artifact@v2
