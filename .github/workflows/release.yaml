@@ -1,9 +1,9 @@
+name: Release
+
 on:
   push:
-    tags:
-      - 'v*' # Run when tag matches v*, i.e. v1.0, v20.15.10
-
-name: Release
+    branches:
+      - master
 
 env:
   RELEASE_BIN: clipboard-warrior
