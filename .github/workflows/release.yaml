@@ -88,9 +88,9 @@ jobs:
         shell: bash
         run: |
           cp ./target/${{ matrix.target }}/release/${{ env.RELEASE_BIN }}.exe ./${{ env.RELEASE_DIR }}/${{ env.RELEASE_BIN }}-${{ steps.get_version.outputs.VERSION }}-${{ matrix.target }}/${{ env.RELEASE_BIN }}.exe
-          cp ./target/${{ matrix.target }}/release/${{ env.RELEASE_BIN }}.exe clipboard-warrior-init.exe
+          cp ./target/${{ matrix.target }}/release/${{ env.RELEASE_BIN }}.exe clip-init.exe
           mv ${{ env.RELEASE_ADDS }} ./${{ env.RELEASE_DIR }}/${{ env.RELEASE_BIN }}-${{ steps.get_version.outputs.VERSION }}-${{ matrix.target }}
-          mv clipboard-warrior-init.exe ${{ env.RELEASE_DIR }}
+          mv clip-init.exe ${{ env.RELEASE_DIR }}
 
       - name: Create tarball
         shell: bash
@@ -151,9 +151,9 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #   with:
       #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
+      #     asset_path: ./clip-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
       #     asset_content_type: application/gzip
-      #     asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
+      #     asset_name: clip-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_AMD64_TARGET }}.tar.gz
 
       # - name: Release Linux arm64 tarball
       #   uses: actions/upload-release-asset@v1
@@ -161,9 +161,9 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #   with:
       #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
+      #     asset_path: ./clip-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
       #     asset_content_type: application/gzip
-      #     asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
+      #     asset_name: clip-${{ steps.get_version.outputs.VERSION }}-${{ env.LINUX_ARM64_TARGET }}.tar.gz
 
       - name: Release Windows tarball
         uses: actions/upload-release-asset@v1
@@ -171,9 +171,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
+          asset_path: ./clip-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
           asset_content_type: application/gzip
-          asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
+          asset_name: clip-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
 
       - name: Release Windows init exe
         uses: actions/upload-release-asset@v1
@@ -181,9 +181,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./clipboard-warrior-init.exe
+          asset_path: ./clip-init.exe
           asset_content_type: application/vnd.microsoft.portable-executable
-          asset_name: clipboard-warrior-init.exe
+          asset_name: clip-init.exe
 
       - name: Release MacOS tarball
         uses: actions/upload-release-asset@v1
@@ -191,6 +191,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.MACOS_TARGET }}.tar.gz
+          asset_path: ./clip-${{ steps.get_version.outputs.VERSION }}-${{ env.MACOS_TARGET }}.tar.gz
           asset_content_type: application/gzip
-          asset_name: clipboard-warrior-${{ steps.get_version.outputs.VERSION }}-${{ env.MACOS_TARGET }}.tar.gz
+          asset_name: clip-${{ steps.get_version.outputs.VERSION }}-${{ env.MACOS_TARGET }}.tar.gz
