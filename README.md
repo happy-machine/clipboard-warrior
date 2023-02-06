@@ -1,6 +1,6 @@
 
 ![Logo](./logo.png)
-#### Save your memory for more important things! 
+#### Save your memory for more important things
 
 Clipboard warrior is a simple Terminal tool to make it easy for you to copy and paste commands and text from your clipboard. You can paste commands into a menu and use your cursor keys to traverse them quickly.
 
